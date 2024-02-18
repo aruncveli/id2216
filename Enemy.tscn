@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://drrk6iti1q01b"]
 
 [ext_resource type="Texture2D" uid="uid://cup7m80534n1u" path="res://enemy.png" id="1_7w747"]
-[ext_resource type="Script" path="res://EnemyManager.gd" id="1_g6qhh"]
+[ext_resource type="Script" path="res://Enemy.gd" id="1_g6qhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xr36n"]
 size = Vector2(23, 31)
 
 [node name="Enemy" type="PathFollow2D"]
 rotates = false
+loop = false
 script = ExtResource("1_g6qhh")
 
 [node name="Sprite" type="Sprite2D" parent="."]

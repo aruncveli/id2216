@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfo6b0y4r815d"]
+
+[ext_resource type="Script" path="res://TreeTile.gd" id="1_bwpma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdr0o"]
+size = Vector2(70, 70)
+
+[node name="TreeTile" type="Area2D"]
+script = ExtResource("1_bwpma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hdr0o")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

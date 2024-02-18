@@ -1,15 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://dfit7ab4g43f8"]
 
-[ext_resource type="Script" path="res://GameManager.gd" id="1_cqhmp"]
-[ext_resource type="PackedScene" uid="uid://c3dumw1oxc0ae" path="res://Level.tscn" id="1_kis6y"]
-[ext_resource type="Theme" uid="uid://10hdtn5uh4ml" path="res://UI-theme.tres" id="3_nf01c"]
-[ext_resource type="Texture2D" uid="uid://bm6eqkdraq8ja" path="res://heart.png" id="3_x7g7d"]
-[ext_resource type="Texture2D" uid="uid://b1gtbp3fbyuuu" path="res://coin.png" id="4_iop25"]
+[ext_resource type="Script" path="res://Game.gd" id="1_mw26x"]
+[ext_resource type="PackedScene" uid="uid://c3dumw1oxc0ae" path="res://Level.tscn" id="2_idn2v"]
+[ext_resource type="Theme" uid="uid://10hdtn5uh4ml" path="res://UI-theme.tres" id="3_sracl"]
+[ext_resource type="Texture2D" uid="uid://bm6eqkdraq8ja" path="res://heart.png" id="4_82pd7"]
+[ext_resource type="Texture2D" uid="uid://b1gtbp3fbyuuu" path="res://coin.png" id="5_oiumb"]
 
-[node name="Base" type="Node2D"]
-script = ExtResource("1_cqhmp")
+[node name="Game" type="Node2D"]
+script = ExtResource("1_mw26x")
 
-[node name="Level" parent="." instance=ExtResource("1_kis6y")]
+[node name="Level" parent="." instance=ExtResource("2_idn2v")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -20,7 +20,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme = ExtResource("3_nf01c")
+theme = ExtResource("3_sracl")
 
 [node name="Stats" type="VBoxContainer" parent="CanvasLayer/UI"]
 layout_mode = 0
@@ -32,7 +32,7 @@ layout_mode = 2
 
 [node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Stats/Lives"]
 layout_mode = 2
-texture = ExtResource("3_x7g7d")
+texture = ExtResource("4_82pd7")
 
 [node name="Label" type="Label" parent="CanvasLayer/UI/Stats/Lives"]
 layout_mode = 2
@@ -43,7 +43,7 @@ layout_mode = 2
 
 [node name="Icon" type="TextureRect" parent="CanvasLayer/UI/Stats/Coins"]
 layout_mode = 2
-texture = ExtResource("4_iop25")
+texture = ExtResource("5_oiumb")
 
 [node name="Label" type="Label" parent="CanvasLayer/UI/Stats/Coins"]
 layout_mode = 2

@@ -11,16 +11,24 @@ config_version=5
 [application]
 
 config/name="id2216"
-run/main_scene="res://Base.tscn"
+run/main_scene="res://Game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [display]
 
 window/size/viewport_width=844
 window/size/viewport_height=390
 window/size/resizable=false
+
+[filesystem]
+
+import/blender/enabled=false
 
 [rendering]
 
