@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c53t1pjflsn5m"
-path="res://.godot/imported/stone.png-083619ed9cb60da6213c6ca04d200509.ctex"
+uid="uid://jerp26oo3yu1"
+path="res://.godot/imported/Tree1_idle1.png-5ef8d3ec374a14f423972439fbd00bdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stone.png"
-dest_files=["res://.godot/imported/stone.png-083619ed9cb60da6213c6ca04d200509.ctex"]
+source_file="res://Animatios/Tree1_idle1.png"
+dest_files=["res://.godot/imported/Tree1_idle1.png-5ef8d3ec374a14f423972439fbd00bdb.ctex"]
 
 [params]
 

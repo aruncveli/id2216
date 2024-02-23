@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch37i5pdkphi6"]
+
+[ext_resource type="Texture2D" uid="uid://c4sayg0054icr" path="res://Animatios/Normal_Simple_Tree.png" id="1_dkn4l"]
+[ext_resource type="Script" path="res://PathSpawner.gd" id="2_dpfgi"]
+[ext_resource type="Texture2D" uid="uid://ba8erglog8ur4" path="res://Animatios/Normal_Simple_Tree_Cover.png" id="2_tosy2"]
+[ext_resource type="PackedScene" uid="uid://bb4xs0yo0yh3t" path="res://UI.tscn" id="4_lhanf"]
+
+[node name="Lvl1" type="Node2D"]
+
+[node name="NormalSimpleTree" type="Sprite2D" parent="."]
+position = Vector2(422, 195)
+texture = ExtResource("1_dkn4l")
+
+[node name="SpriteCover" type="Sprite2D" parent="NormalSimpleTree"]
+visible = false
+position = Vector2(1.81869e-05, 5.72205e-06)
+texture = ExtResource("2_tosy2")
+
+[node name="PathSpawner" type="Node2D" parent="."]
+script = ExtResource("2_dpfgi")
+
+[node name="Timer" type="Timer" parent="PathSpawner"]
+autostart = true
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("4_lhanf")]
+
+[connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]

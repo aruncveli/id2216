@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://wbp5wxf6gd4h"]
+
+[ext_resource type="Texture2D" uid="uid://c4sayg0054icr" path="res://Animatios/Normal_Simple_Tree.png" id="1_jcysw"]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="NormalSimpleTree" type="Sprite2D" parent="."]
+position = Vector2(422, 196)
+texture = ExtResource("1_jcysw")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 108.0
+offset_top = 35.0
+offset_right = 728.0
+offset_bottom = 342.0
+
+[node name="Text" type="Label" parent="."]
+offset_left = 109.0
+offset_top = 123.0
+offset_right = 728.0
+offset_bottom = 252.0
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1

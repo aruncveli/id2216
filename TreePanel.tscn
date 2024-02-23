@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://deb6ymhs14ocv"]
+
+[ext_resource type="Script" path="res://TreePanel.gd" id="1_n1uuk"]
+[ext_resource type="Texture2D" uid="uid://jerp26oo3yu1" path="res://Animatios/Tree1_idle1.png" id="2_dgwqn"]
+
+[node name="TreePanel" type="Panel"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_n1uuk")
+
+[node name="Tree1Idle1" type="Sprite2D" parent="."]
+position = Vector2(25, 25)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_dgwqn")
+
+[node name="Cost" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 37.0
+offset_right = 49.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 10
+text = "50"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -10,26 +10,26 @@ config_version=5
 
 [application]
 
-config/name="id2216"
-run/main_scene="res://Game.tscn"
+config/name="ProjectTDmobile"
+run/main_scene="res://MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://Global.gd"
+Game="*res://Game.gd"
 
 [display]
 
 window/size/viewport_width=844
 window/size/viewport_height=390
-window/size/resizable=false
 
-[filesystem]
+[input_devices]
 
-import/blender/enabled=false
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

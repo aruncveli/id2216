@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j743hycptogw"
-path="res://.godot/imported/map.png-9eea34967fae34f4388f4a32a16da936.ctex"
+uid="uid://budn3jbbolyw4"
+path="res://.godot/imported/applebullet.png-685c4b716f5b0c75f0b21b10461b031e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://map.png"
-dest_files=["res://.godot/imported/map.png-9eea34967fae34f4388f4a32a16da936.ctex"]
+source_file="res://Animatios/applebullet.png"
+dest_files=["res://.godot/imported/applebullet.png-685c4b716f5b0c75f0b21b10461b031e.ctex"]
 
 [params]
 

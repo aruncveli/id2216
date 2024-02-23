@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm6eqkdraq8ja"
-path="res://.godot/imported/heart.png-46ac0108226a8969f121b451c7b38c9b.ctex"
+uid="uid://bvtp3cpy5bsjy"
+path="res://.godot/imported/Tree1_idle2.png-0d3e67a593ba8f3629d21cb3e00756a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heart.png"
-dest_files=["res://.godot/imported/heart.png-46ac0108226a8969f121b451c7b38c9b.ctex"]
+source_file="res://Animatios/Tree1_idle2.png"
+dest_files=["res://.godot/imported/Tree1_idle2.png-0d3e67a593ba8f3629d21cb3e00756a5.ctex"]
 
 [params]
 
