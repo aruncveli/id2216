@@ -13,7 +13,6 @@ config_version=5
 config/name="ProjectTDmobile"
 run/main_scene="res://MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
 
 [autoload]
 

@@ -1,20 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://ch37i5pdkphi6"]
 
-[ext_resource type="Texture2D" uid="uid://c4sayg0054icr" path="res://Animatios/Normal_Simple_Tree.png" id="1_dkn4l"]
+[ext_resource type="Texture2D" uid="uid://cbw8kqvai2se6" path="res://Animatios/map.png" id="1_mqk0l"]
 [ext_resource type="Script" path="res://PathSpawner.gd" id="2_dpfgi"]
-[ext_resource type="Texture2D" uid="uid://ba8erglog8ur4" path="res://Animatios/Normal_Simple_Tree_Cover.png" id="2_tosy2"]
 [ext_resource type="PackedScene" uid="uid://bb4xs0yo0yh3t" path="res://UI.tscn" id="4_lhanf"]
+[ext_resource type="TileSet" uid="uid://by2wl55sek7h5" path="res://TileSet.tres" id="5_vuf66"]
 
 [node name="Lvl1" type="Node2D"]
 
-[node name="NormalSimpleTree" type="Sprite2D" parent="."]
+[node name="MapImage" type="Sprite2D" parent="."]
 position = Vector2(422, 195)
-texture = ExtResource("1_dkn4l")
+texture = ExtResource("1_mqk0l")
 
-[node name="SpriteCover" type="Sprite2D" parent="NormalSimpleTree"]
-visible = false
-position = Vector2(1.81869e-05, 5.72205e-06)
-texture = ExtResource("2_tosy2")
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("5_vuf66")
+rendering_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(65537, 1, 65536, 65538, 1, 65536, 196611, 1, 65536, 262148, 1, 65536, 4, 1, 65536, 131077, 1, 65536, 6, 1, 65536, 65543, 1, 65536, 8, 1, 65536, 10, 1, 65536, 262150, 1, 65536, 262151, 1, 65536, 196615, 1, 65536, 327689, 1, 65536)
 
 [node name="PathSpawner" type="Node2D" parent="."]
 script = ExtResource("2_dpfgi")
