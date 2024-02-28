@@ -23,10 +23,13 @@ func _on_gui_input(event: InputEvent):
 				get_child(1).global_position = event.global_position
 
 		elif event is InputEventMouseButton and event.button_mask == 0:
+			# Local position is the position relative to the Lvl1 node
 			var local_position = level.to_local(event.global_position)
-			var map_position = tile_map.local_to_map(local_position)
-			print(map_position)
-			print(tree_placeable_cells.has(map_position)) # true if tree can be placed
+			# 0-indexed (I think) coordinates of the mouse position, with respect to the tile map
+			var tile_map_cell_coordinates = tile_map.local_to_map(local_position)
+			print(tile_map_cell_coordinates)
+			 # true if tree can be placed
+			print(tree_placeable_cells.has(tile_map_cell_coordinates))
 			
 			if event.global_position.x >= 787:
 				if get_child_count() > 1:
