@@ -14,24 +14,22 @@ func _ready():
 func _on_gui_input(event: InputEvent):
 	if Game.Sun >=50:
 		var tempTower = tower.instantiate()
-		if event is InputEventMouseButton and event.button_mask == 1:
+		if event is InputEventScreenTouch and event.pressed:
 			add_child(tempTower)
-			tempTower.global_position = event.global_position
+			tempTower.position = event.position
 		
-		elif event is InputEventMouseMotion and event.button_mask == 1:
+		elif event is InputEventScreenDrag and event.pressure >= 0.0:
 			if get_child_count() > 1:
-				get_child(1).global_position = event.global_position
+				get_child(1).position = event.position
 
-		elif event is InputEventMouseButton and event.button_mask == 0:
+		elif event is InputEventScreenTouch and not event.pressed:
 			# Local position is the position relative to the Lvl1 node
-			var local_position = level.to_local(event.global_position)
-			# 0-indexed (I think) coordinates of the mouse position, with respect to the tile map
+			var local_position = level.to_local(event.position)
+			# 0-indexed (I think) coordinates of cell the mouse pointer is in, with respect to the tile map
 			var tile_map_cell_coordinates = tile_map.local_to_map(local_position)
 			print(tile_map_cell_coordinates)
 			 # true if tree can be placed
-			print(tree_placeable_cells.has(tile_map_cell_coordinates))
-			
-			if event.global_position.x >= 787:
+			if not tree_placeable_cells.has(tile_map_cell_coordinates):
 				if get_child_count() > 1:
 					get_child(1).queue_free()
 			else:
@@ -39,7 +37,7 @@ func _on_gui_input(event: InputEvent):
 					get_child(1).queue_free()
 				var path = get_tree().get_root().get_node("Lvl1/Towers")
 				path.add_child(tempTower)
-				tempTower.global_position = event.global_position
+				tempTower.position = event.position
 				tempTower.get_node("Area").hide()
 				Game.Sun -= 50
 		else:
