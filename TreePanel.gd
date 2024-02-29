@@ -5,8 +5,7 @@ var currFile
 var level: Node2D
 var tile_map: TileMap
 var tree_placeable_cells: Array[Vector2i]
-# workaround
-var placement_offset = Vector2(787,0)
+var placement_offset = Vector2(787,0) # workaroundremove i
 
 func _ready():
 	level = get_tree().get_root().get_node("Lvl1")
@@ -28,7 +27,7 @@ func _on_gui_input(event: InputEvent):
 			# 0-indexed (I think) coordinates of cell the mouse pointer is in, with respect to the tile map
 			var translated_position = event.position + placement_offset
 			var tile_map_cell_coordinates = tile_map.local_to_map(translated_position)
-			print(tile_map_cell_coordinates)
+			var tile = tile_map.get_cell_alternative_tile(0, tile_map_cell_coordinates)
 			
 			# true if tree can be placed
 			if not tree_placeable_cells.has(tile_map_cell_coordinates):
@@ -43,6 +42,7 @@ func _on_gui_input(event: InputEvent):
 				tempTower.get_node("Area").hide()
 				tempTower.placed = true
 				Game.Sun -= 50
+				tree_placeable_cells.erase(tile_map_cell_coordinates)
 		else:
 			if get_child_count() > 2:
 				get_child(1).queue_free()
