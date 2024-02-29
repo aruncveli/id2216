@@ -7,6 +7,7 @@ var bulletDamage = 5
 var pathName
 var currTargets = []
 var curr
+var placed: bool = false
 
 func _process(delta):
 	if not is_instance_valid(curr):
@@ -18,7 +19,7 @@ func _process(delta):
 	$AnimatedSprite2D.play()
 
 func _on_tower_body_entered(body):
-	if "Soldier1" in body.name:
+	if "Soldier1" in body.name and placed:
 		var tempArray =[]
 		currTargets = get_node("Tower").get_overlapping_bodies()
 		
@@ -42,10 +43,6 @@ func _on_tower_body_entered(body):
 		tempBullet.bulletDamage = bulletDamage
 		get_node("BulletContainer").add_child(tempBullet)
 		tempBullet.global_position = $Aim.global_position
-
-
-
-
 
 func _on_tower_body_exited(body):
 	currTargets = get_node("Tower").get_overlapping_bodies()
