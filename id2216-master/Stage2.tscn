@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://6av61wp0fogg"]
+
+[ext_resource type="PackedScene" uid="uid://dyl1o5vsqso38" path="res://Soldier1.tscn" id="1_kbv7m"]
+
+[sub_resource type="Curve2D" id="Curve2D_34aad"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 597, -9, 0, 0, 0, 0, 597, 27, 0, 0, 0, 0, 593, 51, 0, 0, 0, 0, 585, 71, 0, 0, 0, 0, 534, 105, 0, 0, 0, 0, 512, 126, 0, 0, 0, 0, 483, 146, 0, 0, 0, 0, 448, 149, 0, 0, 0, 0, 429, 120, 0, 0, 0, 0, 405, 100, 0, 0, 0, 0, 378, 72, 0, 0, 0, 0, 319, 67, 0, 0, 0, 0, 280, 81, 0, 0, 0, 0, 251, 115, 0, 0, 0, 0, 222, 137, 0, 0, 0, 0, 170, 134, 0, 0, 0, 0, 135, 132, 0, 0, 0, 0, 92, 131, 0, 0, 0, 0, 54, 131, 0, 0, 0, 0, 23, 133, 0, 0, 0, 0, -12, 130)
+}
+point_count = 21
+
+[node name="Path2D" type="Path2D"]
+position = Vector2(6, 9)
+curve = SubResource("Curve2D_34aad")
+
+[node name="PathSpawner" type="PathFollow2D" parent="."]
+position = Vector2(597, -9)
+rotation = 1.62955
+rotates = false
+loop = false
+
+[node name="Soldier1" parent="PathSpawner" instance=ExtResource("1_kbv7m")]
+rotation = 4.69494
