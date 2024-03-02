@@ -5,7 +5,7 @@ var currFile
 var level: Node2D
 var tile_map: TileMap
 var tree_placeable_cells: Array[Vector2i]
-var placement_offset = Vector2(787,0) # workaroundremove i
+var drag_offset = Vector2(787,0) # workaround
 
 func _ready():
 	level = get_tree().get_root().get_node("Lvl1")
@@ -19,13 +19,28 @@ func _on_gui_input(event: InputEvent):
 			add_child(tempTower)
 			tempTower.global_position = event.position
 		
-		elif event is InputEventScreenDrag and event.pressure >= 0.0:
+		elif event is InputEventScreenDrag and event.pressure > 0.0:
 			if get_child_count() > 1:
-				get_child(1).global_position = event.position + placement_offset
+				var tree = get_child(1)
+				tree.global_position = event.position + drag_offset
+				var tree_area = tree.get_node("Area")
+				
+				var translated_position = event.position + drag_offset
+				var tile_map_cell_coordinates = tile_map.local_to_map(translated_position)
+				var tile = tile_map.get_cell_alternative_tile(0, tile_map_cell_coordinates)
+				
+				if not tree_placeable_cells.has(tile_map_cell_coordinates):
+					var new_stylebox_normal = tree_area.get_theme_stylebox("panel").duplicate()
+					new_stylebox_normal.bg_color = Color(0.55, 0, 0, 0.3)
+					tree_area.add_theme_stylebox_override("panel", new_stylebox_normal)
+				else:
+					var new_stylebox_normal = tree_area.get_theme_stylebox("panel").duplicate()
+					new_stylebox_normal.bg_color = Color(0, 0.4, 0, 0.3)
+					tree_area.add_theme_stylebox_override("panel", new_stylebox_normal)
 
 		elif event is InputEventScreenTouch and not event.pressed:
 			# 0-indexed (I think) coordinates of cell the mouse pointer is in, with respect to the tile map
-			var translated_position = event.position + placement_offset
+			var translated_position = event.position + drag_offset
 			var tile_map_cell_coordinates = tile_map.local_to_map(translated_position)
 			var tile = tile_map.get_cell_alternative_tile(0, tile_map_cell_coordinates)
 			

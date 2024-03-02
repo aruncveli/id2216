@@ -1,7 +1,5 @@
 extends StaticBody2D
 
-
-
 var Bullet = preload("res://Bullet.tscn")
 var bulletDamage = 5
 var pathName
