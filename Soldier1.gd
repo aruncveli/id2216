@@ -8,6 +8,7 @@ func _process(delta):
 	if get_parent().get_progress_ratio() == 1:
 		queue_free()
 		Game.Health -= 1
+		get_parent().get_parent().queue_free()
 		
 	if Health <= 0:
 		get_parent().get_parent().queue_free()

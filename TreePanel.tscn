@@ -14,11 +14,11 @@ position = Vector2(25, 25)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_dgwqn")
 
-[node name="Cost" type="Label" parent="."]
-offset_left = 36.0
-offset_top = 35.0
-offset_right = 48.0
-offset_bottom = 49.0
+[node name="Cost" type="Label" parent="Tree1Idle1"]
+offset_left = 7.33333
+offset_top = 6.66667
+offset_right = 19.3333
+offset_bottom = 20.6667
 theme_override_font_sizes/font_size = 8
 text = "50"
 
