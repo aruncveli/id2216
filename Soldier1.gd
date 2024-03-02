@@ -9,9 +9,11 @@ func _process(delta):
 		queue_free()
 		Game.Health -= 1
 		get_parent().get_parent().queue_free()
+		Game.live_enemies_count -= 1
 		
 	if Health <= 0:
 		get_parent().get_parent().queue_free()
+		Game.live_enemies_count -= 1
 		Game.Sun += 25
 	
 	$AnimatedSprite2D.animation = "Walk"

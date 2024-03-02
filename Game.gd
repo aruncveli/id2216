@@ -5,6 +5,7 @@ var Sun = 100
 var Health = 10
 var numberPath = 10
 var numberPath2 = 10
+var live_enemies_count = 0
 
 func _process(delta):
 	if Health <= 0:

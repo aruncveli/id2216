@@ -2,15 +2,10 @@ extends Panel
 
 @onready var tower = preload("res://Tree1.tscn")
 var currFile
-var level: Node2D
-var tile_map: TileMap
-var tree_placeable_cells: Array[Vector2i]
+@onready var level = get_tree().get_root().get_node("Lvl1")
+@onready var tile_map = get_tree().get_root().get_node("Lvl1/TileMap")
+@onready var tree_placeable_cells = tile_map.get_used_cells(0)
 var drag_offset = Vector2(787,0) # workaround
-
-func _ready():
-	level = get_tree().get_root().get_node("Lvl1")
-	tile_map = get_tree().get_root().get_node("Lvl1/TileMap")
-	tree_placeable_cells = tile_map.get_used_cells(0)
 
 func _on_gui_input(event: InputEvent):
 	if Game.Sun >= 50:
