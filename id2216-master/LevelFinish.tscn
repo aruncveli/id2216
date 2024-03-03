@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://xdbg8qq64deg"]
+
+[ext_resource type="Texture2D" uid="uid://cbw8kqvai2se6" path="res://Animatios/map.png" id="1_dqiqg"]
+
+[node name="LevelFinish" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(421, 194)
+texture = ExtResource("1_dqiqg")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 120.0
+offset_top = 39.0
+offset_right = 733.0
+offset_bottom = 359.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 59.0
+offset_right = 612.0
+offset_bottom = 136.0
+text = "Congratulations! You completed level 1!"
+horizontal_alignment = 1
+vertical_alignment = 1
