@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://wu1wd4dn3pk"]
+
+[ext_resource type="Texture2D" uid="uid://jerp26oo3yu1" path="res://Animatios/Tree1_idle1.png" id="1_5r5rl"]
+[ext_resource type="Script" path="res://Tree1.gd" id="1_fc24u"]
+[ext_resource type="Texture2D" uid="uid://bvtp3cpy5bsjy" path="res://Animatios/Tree1_idle2.png" id="2_5unrw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exinb"]
+bg_color = Color(0.152941, 0.45098, 0.247059, 0.352941)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lg0wg"]
+size = Vector2(17, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rc2jg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5r5rl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5unrw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_46s11"]
+radius = 73.0
+
+[node name="Tree1" type="StaticBody2D"]
+script = ExtResource("1_fc24u")
+
+[node name="Area" type="Panel" parent="."]
+offset_left = -73.0
+offset_top = -73.0
+offset_right = 73.0
+offset_bottom = 73.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_exinb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.5, 7)
+shape = SubResource("RectangleShape2D_lg0wg")
+disabled = true
+
+[node name="Aim" type="Marker2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_rc2jg")
+animation = &"idle"
+frame_progress = 0.466132
+
+[node name="Tower" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower"]
+shape = SubResource("CircleShape2D_46s11")
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
