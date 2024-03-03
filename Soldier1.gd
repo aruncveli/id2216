@@ -15,6 +15,7 @@ func _process(delta):
 		get_parent().get_parent().queue_free()
 		Game.live_enemies_count -= 1
 		Game.Sun += 25
+		Game.points += 1
 	
 	$AnimatedSprite2D.animation = "Walk"
 	$AnimatedSprite2D.flip_h = true
