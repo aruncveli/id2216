@@ -12,9 +12,9 @@ func _on_gui_input(event: InputEvent):
 		var tempTower = tower.instantiate()
 		if event is InputEventScreenTouch and event.pressed:
 			add_child(tempTower)
-			tempTower.global_position = event.position
+			tempTower.global_position = event.position + drag_offset
 		
-		elif event is InputEventScreenDrag and event.pressure > 0.0:
+		elif event is InputEventScreenDrag:
 			if get_child_count() > 1:
 				var tree = get_child(1)
 				tree.global_position = event.position + drag_offset
