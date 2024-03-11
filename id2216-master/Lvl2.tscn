@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://4hrhunjy7rkb"]
+
+[ext_resource type="Texture2D" uid="uid://dlbcvlo2ssb5a" path="res://Animatios/map2.png" id="1_qfx6n"]
+[ext_resource type="TileSet" uid="uid://by2wl55sek7h5" path="res://TileSet.tres" id="2_orxne"]
+
+[node name="Lvl2" type="Node2D"]
+
+[node name="MapImage" type="Sprite2D" parent="."]
+position = Vector2(422, 202)
+texture = ExtResource("1_qfx6n")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-13, 0)
+tile_set = ExtResource("2_orxne")
+format = 2
+layer_0/tile_data = PackedInt32Array(262146, 1, 131072, 262145, 1, 131072, 65538, 1, 131072, 2, 1, 131072, 65540, 1, 131072, 131078, 1, 131072, 196615, 1, 131072, 7, 1, 131072, 327688, 1, 131072, 196618, 1, 131072, 196620, 1, 131072)

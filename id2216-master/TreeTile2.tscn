@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnjvhe72vtj3a"]
+
+[ext_resource type="Texture2D" uid="uid://dd4f47tix4n52" path="res://Animatios/tile2.png" id="1_usdo7"]
+
+[node name="TreeTile2" type="Node2D"]
+
+[node name="Tile2" type="Sprite2D" parent="."]
+texture = ExtResource("1_usdo7")
