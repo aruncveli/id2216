@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 var Bullet = preload("res://pineBullet.tscn")
-var bulletDamage = 2.5
+var bulletDamage = 3.5
 var pathName
 var currTargets = []
 var curr

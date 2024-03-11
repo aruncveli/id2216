@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://xdbg8qq64deg"]
+[gd_scene load_steps=3 format=3 uid="uid://xdbg8qq64deg"]
 
 [ext_resource type="Texture2D" uid="uid://cbw8kqvai2se6" path="res://Animatios/map.png" id="1_dqiqg"]
+[ext_resource type="Script" path="res://nextLevel.gd" id="2_uhf1k"]
 
 [node name="LevelFinish" type="Node2D"]
 
@@ -23,3 +24,14 @@ offset_bottom = 136.0
 text = "Congratulations! You completed level 1!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="nextLevel" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 194.0
+offset_right = 424.0
+offset_bottom = 244.0
+text = "Level 2"
+script = ExtResource("2_uhf1k")
+
+[connection signal="pressed" from="Panel/nextLevel" to="Panel/nextLevel" method="_on_pressed"]

@@ -1,16 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://4hrhunjy7rkb"]
+[gd_scene load_steps=5 format=3 uid="uid://cf5g26ascsmx0"]
 
-[ext_resource type="Texture2D" uid="uid://dlbcvlo2ssb5a" path="res://Animatios/map2.png" id="1_qfx6n"]
+[ext_resource type="Texture2D" uid="uid://c06q8siil6m6r" path="res://Animatios/map2.png" id="1_qfx6n"]
 [ext_resource type="TileSet" uid="uid://by2wl55sek7h5" path="res://TileSet.tres" id="2_orxne"]
+[ext_resource type="Script" path="res://PathSpawner2.gd" id="3_6am0c"]
+[ext_resource type="PackedScene" uid="uid://bjl7o4d0iv2iw" path="res://UI2.tscn" id="4_qmh3a"]
 
 [node name="Lvl2" type="Node2D"]
 
 [node name="MapImage" type="Sprite2D" parent="."]
-position = Vector2(422, 202)
+position = Vector2(422, 194.5)
+scale = Vector2(1, 0.962871)
 texture = ExtResource("1_qfx6n")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-13, 0)
+scale = Vector2(1, 0.965)
 tile_set = ExtResource("2_orxne")
+rendering_quadrant_size = 64
 format = 2
-layer_0/tile_data = PackedInt32Array(262146, 1, 131072, 262145, 1, 131072, 65538, 1, 131072, 2, 1, 131072, 65540, 1, 131072, 131078, 1, 131072, 196615, 1, 131072, 7, 1, 131072, 327688, 1, 131072, 196618, 1, 131072, 196620, 1, 131072)
+layer_0/tile_data = PackedInt32Array(262146, 1, 262144, 262145, 1, 262144, 65538, 1, 262144, 2, 1, 262144, 65540, 1, 262144, 131078, 1, 262144, 196615, 1, 262144, 7, 1, 262144, 327688, 1, 262144, 196618, 1, 262144, 196620, 1, 262144)
+
+[node name="PathSpawner2" type="Node2D" parent="."]
+script = ExtResource("3_6am0c")
+
+[node name="Timer" type="Timer" parent="PathSpawner2"]
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="UI2" parent="." instance=ExtResource("4_qmh3a")]
+
+[connection signal="timeout" from="PathSpawner2/Timer" to="PathSpawner2" method="_on_timer_timeout"]

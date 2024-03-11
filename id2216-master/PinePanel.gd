@@ -2,10 +2,10 @@ extends Panel
 
 @onready var tower = preload("res://Tree2.tscn")
 var currFile
-@onready var level = get_tree().get_root().get_node("Lvl1")
-@onready var tile_map = get_tree().get_root().get_node("Lvl1/TileMap")
+@onready var level = get_tree().get_root().get_node("Lvl2")
+@onready var tile_map = get_tree().get_root().get_node("Lvl2/TileMap")
 @onready var tree_placeable_cells = tile_map.get_used_cells(0)
-var drag_offset = Vector2(60,333) # workaround
+var drag_offset = Vector2(0,333) # workaround
 
 func _on_gui_input(event: InputEvent):
 	if Game.Sun >= 50:
@@ -45,9 +45,9 @@ func _on_gui_input(event: InputEvent):
 			else:
 				if get_child_count() > 1:
 					get_child(1).queue_free()
-				var path = get_tree().get_root().get_node("Lvl1/Towers")
+				var path = get_tree().get_root().get_node("Lvl2/Towers")
 				path.add_child(tempTower)
-				tempTower.global_position = tile_map.map_to_local(tile_map_cell_coordinates) + Vector2(0, -10)
+				tempTower.global_position = tile_map.map_to_local(tile_map_cell_coordinates) + Vector2(-13, -13)
 				tempTower.get_node("Area").hide()
 				tempTower.placed = true
 				Game.Sun -= 50
