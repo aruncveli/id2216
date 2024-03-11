@@ -1,7 +1,7 @@
 extends StaticBody2D
 
-var Bullet = preload("res://Bullet.tscn")
-var bulletDamage = 5
+var Bullet = preload("res://pineBullet.tscn")
+var bulletDamage = 2.5
 var pathName
 var currTargets = []
 var curr
@@ -15,6 +15,7 @@ func _process(delta):
 	$AnimatedSprite2D.animation = "idle"
 	#$AnimatedSprite2D.flip_h = true
 	$AnimatedSprite2D.play()
+
 
 func _on_tower_body_entered(body):
 	if "Soldier" in body.name and placed:
@@ -41,6 +42,9 @@ func _on_tower_body_entered(body):
 		tempBullet.bulletDamage = bulletDamage
 		get_node("BulletContainer").call_deferred("add_child", tempBullet)
 		tempBullet.global_position = $Aim.global_position
+
+
+
 
 func _on_tower_body_exited(body):
 	currTargets = get_node("Tower").get_overlapping_bodies()

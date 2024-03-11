@@ -8,8 +8,8 @@ radius = 5.0
 height = 10.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n646o"]
-radius = 6.0
-height = 12.0
+radius = 7.0
+height = 14.0
 
 [node name="Bullet" type="CharacterBody2D"]
 script = ExtResource("1_c41le")

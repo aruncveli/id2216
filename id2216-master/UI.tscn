@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb4xs0yo0yh3t"]
+[gd_scene load_steps=6 format=3 uid="uid://bb4xs0yo0yh3t"]
 
 [ext_resource type="PackedScene" uid="uid://deb6ymhs14ocv" path="res://TreePanel.tscn" id="1_0who7"]
+[ext_resource type="PackedScene" uid="uid://dmkgwt841vqqn" path="res://PinePanel.tscn" id="2_nl1l4"]
 [ext_resource type="Script" path="res://Health.gd" id="2_xt68u"]
 [ext_resource type="Script" path="res://Gold.gd" id="3_b54p5"]
 [ext_resource type="Script" path="res://Points.gd" id="4_0q2py"]
@@ -8,20 +9,23 @@
 [node name="UI" type="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 787.0
-offset_right = 844.0
+offset_top = 333.0
+offset_right = 266.0
 offset_bottom = 390.0
 
 [node name="FlowContainer" type="FlowContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 53.0
-offset_bottom = 386.0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 263.0
+offset_bottom = 53.0
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 
 [node name="TreePanel" parent="Panel/FlowContainer" instance=ExtResource("1_0who7")]
+layout_mode = 2
+
+[node name="PinePanel" parent="Panel/FlowContainer" instance=ExtResource("2_nl1l4")]
 layout_mode = 2
 
 [node name="Health" type="Label" parent="."]
